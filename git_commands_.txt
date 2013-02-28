@@ -1,0 +1,59 @@
+===================================================================================
+Git configurations/Setup
+===================================================================================
+
+git config --list												// to see the git configuration file contents
+git config --global core.autocrlf false							// set the autcrlf value false
+git config --global user.name	"Himadri Talukder"
+git config --global user.email	himadri@digitalmenubox.com		// set up user name and email
+
+
+# Set default so that all changes are always pushed to the repository
+git config --global push.default "matching"
+# Set default so that you avoid unnecessary commits
+git config --global branch.autosetuprebase always 
+
+//------- create .gitignore -------------------------
+cd ~/
+touch .gitignore
+echo "*~" >> .gitignore
+echo ".DS_Store" >> .gitignore
+
+git config --global core.excludesfile ~/.gitignore
+------------------------------------------------------
+------------Empty directory   ------------------------
+if you want to include the empty direcotry then put a file .gitkeep in the empty directory as generally git ignores empty directory
+------------------------------------------------------
+
+===================================================================================
+Create Git repository
+===================================================================================
+cd repo01
+git init
+
+#This repo01 directory contains the complete history of the repository. The .git/config file contains the local configuration for the repository.
+===================================================================================
+Add files to Git index
+===================================================================================
+# Add all (files and directories) to the index of the 
+# Git repository
+git add . 
+
+===================================================================================
+Commit to Git repository
+===================================================================================
+# Make a commit of your file to the local repository
+git commit -m "Initial commit"
+
+# Show the log file with the commits
+git log 
+
+
+====================================================================================
+Eclipse configuration if not pull set up / if git pull doesn't work from egit
+====================================================================================
+You could do "git pull origin master" to tell git the explicit branch you want to pull or you add this to your .git/config:
+
+[branch "master"]
+  remote = origin
+  merge = refs/heads/master

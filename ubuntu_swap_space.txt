@@ -1,0 +1,71 @@
+============= to see swap space ==================================
+#swapon -s
+
+OR
+
+#free
+
+OR 
+
+#cat /proc/meminfo
+
+OR 
+
+#cat /proc/swaps
+
+============= add new swap file ==================================
+
+- Creating a file the size you want.
+- Formatting that file to create a swapping device.
+- Adding the swap to the running system.
+- Making the change permanent.
+
+We will create a /mnt/512MiB.swap swap file and set the permissions so that users cannot read it directly
+
+#sudo fallocate -l 512m /mnt/512MiB.swap
+#sudo chmod 600 /mnt/512MiB.swap
+
+If fallocate fails with "fallocate failed: Operation not supported" as it currently does on my Maverick machine, you can do this the old way, again 512 mebibytes:
+
+#sudo dd if=/dev/zero of=/mnt/512MiB.swap bs=1024 count=524288
+#sudo chmod 600 /mnt/512MiB.swap
+
+Formatting that file to create a swapping device:
+
+#sudo mkswap /mnt/512MiB.swap
+
+Adding the swap to the running system:
+
+#sudo swapon /mnt/512MiB.swap
+
+The additional swap is now available and can be seen by "cat /proc/meminfo"
+
+Making the change permanent:
+
+#gksudo gedit /etc/fstab
+
+Add this line at the end of the file:
+
+/mnt/512MiB.swap  none  swap  sw  0 0
+
+Save. After the next reboot the swap will be used automatically.
+
+========================================================================
+
+Undoing your changes :
+
+Undoing basically follows the same process in reverse.
+
+#gksudo gedit /etc/fstab
+Remove the line
+
+/mnt/512MiB.swap  none  swap  sw  0 0
+
+Remove the swap from the running system and remove the swap file.
+
+#sudo swapoff /mnt/512MiB.swap && sudo rm /mnt/512MiB.swap
+No need to reboot.
+
+=========================================================================
+==================== Reference ==========================================
+Reference: https://help.ubuntu.com/community/SwapFaq

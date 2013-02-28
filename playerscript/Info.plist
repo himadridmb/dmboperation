@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>CFBundleExecutable</key>
+        <string>JavaApplicationStub</string>
+        <key>CFBundleGetInfoString</key>
+        <string>JavaPlayerRun1.0, Copyright {user} 2004. All rights reserved.</string>
+        <key>CFBundleInfoDictionaryVersion</key>
+        <string>6.0</string>
+        <key>CFBundleIconFile</key>
+        <string>dmbplayer.icns</string>
+        <key>CFBundleIdentifier</key>
+        <string>javaplayer</string>
+        <key>CFBundleName</key>
+        <string>dmbplayer</string>
+        <key>CFBundlePackageType</key>
+        <string>APPL</string>
+        <key>CFBundleSignature</key>
+        <string>????</string>
+        <key>CFBundleVersion</key>
+        <string>1.0.1</string>
+        <key>Java</key>
+        <dict>
+            <key>JVMVersion</key>
+            <string>1.5+</string>
+            <key>MainClass</key>
+            <string>player.Test</string>
+            <key>StartOnMainThread</key>
+            <true/>
+            <key>Arguments</key>
+            <array/>
+            <key>VMOptions</key>
+            <string>-Xmx1024M -Xms1024M -d64 -XstartOnFirstThread </string>
+            <key>ClassPath</key>
+            <string>$JAVAROOT/jar_0.jar:$JAVAROOT/calendrica.jar:$JAVAROOT/commons-cli.jar:$JAVAROOT/commons-io-2.0.1.jar:$JAVAROOT/commons-net-3.0.1.jar:$JAVAROOT/DJNativeSwing-SWT.jar:$JAVAROOT/DJNativeSwing.jar:$JAVAROOT/javamail.jar:$JAVAROOT/jna-3.2.4.jar:$JAVAROOT/jna.jar:$JAVAROOT/js.jar:$JAVAROOT/json_simple-1.1.jar:$JAVAROOT/log4j-1.2.16.jar:$JAVAROOT/logback-classic.jar:$JAVAROOT/logback-core.jar:$JAVAROOT/miglayout15-swing.jar:$JAVAROOT/opencsv-2.3.jar:$JAVAROOT/scheduling.jar:$JAVAROOT/slf4j-api.jar:$JAVAROOT/swt-debug.jar:$JAVAROOT/swt.jar:$JAVAROOT/xstream-1.4.1.jar:$JAVAROOT/xuggle-xuggler-test.jar:$JAVAROOT/xuggle-xuggler.jar:$JAVAROOT/vlcj-1.2.1-b3.jar</string>
+        </dict>
+	<key>LSUIPresentationMode</key>
+	<integer>4</integer>
+    </dict>
+</plist>
